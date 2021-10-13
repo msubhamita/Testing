@@ -1,0 +1,389 @@
+[
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "location",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": ",",
+    "regex": false,
+    "maxColumns": 0,
+    "description": "Split column location by separator"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "location 1",
+    "newColumnName": "geographic location (countr)",
+    "description": "Rename column location 1 to geographic location (countr)"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "location 2",
+    "newColumnName": "geographic location (state)",
+    "description": "Rename column location 2 to geographic location (state)"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "location 3",
+    "newColumnName": "geographic location (city)",
+    "description": "Rename column location 3 to geographic location (city)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "geographic location (city)",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column geographic location (city) using expression value.trim()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "geographic location (city)",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column geographic location (city) using expression value.trim()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "date",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column date using expression value.toDate()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "date",
+    "expression": "value.toString()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column date using expression value.toString()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "date",
+    "expression": "value.replace(\"T00:00:00Z  Original sequences \",\"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column date using expression value.replace(\"T00:00:00Z  Original sequences \",\"\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "date",
+    "expression": "value.replace(\"T00:00:00Z\",\"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column date using expression value.replace(\"T00:00:00Z\",\"\")"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "date",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "31 March"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "2020-03-31"
+      }
+    ],
+    "description": "Mass edit cells in column date"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "date",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "32 March"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "2020-04-01"
+      }
+    ],
+    "description": "Mass edit cells in column date"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "date",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "33 March"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "2020-04-02"
+      }
+    ],
+    "description": "Mass edit cells in column date"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "date",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "2020-04-01"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "2020-03-31"
+      }
+    ],
+    "description": "Mass edit cells in column date"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "date",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "2020-04-02"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "2020-04-01"
+      }
+    ],
+    "description": "Mass edit cells in column date"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "date",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "7 April"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "2020-04-07"
+      }
+    ],
+    "description": "Mass edit cells in column date"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "date",
+          "expression": "value",
+          "columnName": "date",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "2020-03-31",
+                "l": "2020-03-31"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        },
+        {
+          "type": "text",
+          "name": "health state",
+          "columnName": "health state",
+          "query": "healthy",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "age",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column age using expression value.toNumber()"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "date",
+          "expression": "value",
+          "columnName": "date",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "2020-03-31",
+                "l": "2020-03-31"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "disease outcome",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "NA"
+      }
+    ],
+    "description": "Mass edit cells in column disease outcome"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "date",
+          "expression": "value",
+          "columnName": "date",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "2020-03-31",
+                "l": "2020-03-31"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "symptoms",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "NA"
+      }
+    ],
+    "description": "Mass edit cells in column symptoms"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "date",
+          "expression": "value",
+          "columnName": "date",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": "2020-03-31",
+                "l": "2020-03-31"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "health state",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [],
+        "fromBlank": true,
+        "fromError": false,
+        "to": "NA"
+      }
+    ],
+    "description": "Mass edit cells in column health state"
+  }
+]
