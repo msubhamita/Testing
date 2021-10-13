@@ -361,29 +361,4 @@
           "omitBlank": false,
           "omitError": false,
           "selection": [
-            {
-              "v": {
-                "v": "2020-03-31",
-                "l": "2020-03-31"
-              }
-            }
-          ],
-          "selectBlank": false,
-          "selectError": false
-        }
-      ],
-      "mode": "row-based"
-    },
-    "columnName": "health state",
-    "expression": "value",
-    "edits": [
-      {
-        "from": [],
-        "fromBlank": true,
-        "fromError": false,
-        "to": "NA"
-      }
-    ],
-    "description": "Mass edit cells in column health state"
-  }
-]
+           
